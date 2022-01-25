@@ -55,12 +55,12 @@
 		5CF73F78279BB1A1005FC784 /* memorize */ = {
 			isa = PBXGroup;
 			children = (
+				5CBCF28F279ED4A4008358A4 /* EmojiMemoryGame.swift */,
 				5CF73F79279BB1A1005FC784 /* memorizeApp.swift */,
 				5CF73F7B279BB1A1005FC784 /* ContentView.swift */,
 				5CBCF28D279ED171008358A4 /* MemoryGame.swift */,
 				5CF73F7D279BB1A2005FC784 /* Assets.xcassets */,
 				5CF73F7F279BB1A2005FC784 /* Preview Content */,
-				5CBCF28F279ED4A4008358A4 /* EmojiMemoryGame.swift */,
 			);
 			path = memorize;
 			sourceTree = "<group>";
