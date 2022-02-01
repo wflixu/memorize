@@ -9,55 +9,31 @@ import SwiftUI
 
 struct EmojiMemoryGameView: View {
     
-    
-    
     @ObservedObject var  game : EmojiMemoryGame;
      
-    
     var body: some View {
-        VStack {
-            ScrollView {
-                LazyVGrid (columns: [GridItem(.adaptive(minimum: 75, maximum: 100))])  {
-                    ForEach(game.cards){ card in
-                        Card(card: card).aspectRatio(2/3, contentMode: .fit)
-                            .onTapGesture {
-                                game.choose(card )
-
-                            }
-                    }
+            AspectVGrid(items: game.cards, aspectRatio: 2/3, content: { card in
+                if card.isMatched && !card.isFaceUp {
+                    Rectangle().opacity(0)
+                } else {
+                    CardView(card: card)
+                        .padding(4)
+                        .onTapGesture {
+                            game.choose(card)
+                        }
                 }
-            }.padding().foregroundColor(.red)
-            
-//            HStack {
-//                Button(action:{
-//                    if count > 1 {
-//                        count = count - 1
-//                    }
-//
-//                },label:{
-//                    Image(systemName: "minus.circle")
-//                })
-//                Spacer()
-//                Button(action:{
-//                    if count < emojis.count {
-//                        count = count + 1
-//                    }
-//
-//                }, label: {
-//                    Image(systemName: "plus.circle")
-//                })
-//            }
-//            .padding(.horizontal, 22.0)
-//            .font(.largeTitle)
-        }
-       
+            })
+            .padding(.horizontal)
+            .foregroundColor(.red)
     }
+
+    
 }
 
 
-struct Card: View {
+struct CardView: View {
     var card : EmojiMemoryGame.Card;
-
+   
     var body: some View {
         GeometryReader { geometry in
             ZStack{
