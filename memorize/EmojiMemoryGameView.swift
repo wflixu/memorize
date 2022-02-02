@@ -12,7 +12,7 @@ struct EmojiMemoryGameView: View {
     @ObservedObject var  game : EmojiMemoryGame;
      
     var body: some View {
-            AspectVGrid(items: game.cards, aspectRatio: 2/3, content: { card in
+            AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
                 if card.isMatched && !card.isFaceUp {
                     Rectangle().opacity(0)
                 } else {
@@ -22,7 +22,7 @@ struct EmojiMemoryGameView: View {
                             game.choose(card)
                         }
                 }
-            })
+            }
             .padding(.horizontal)
             .foregroundColor(.red)
     }
@@ -41,6 +41,7 @@ struct CardView: View {
                 if(card.isFaceUp) {
                     shape.fill().foregroundColor(.white)
                     shape.strokeBorder(lineWidth: DrawingContents.lineWidth)
+                    Pie(startAngle: Angle(degrees: -90), endAngle: Angle(degrees: 150-90)).padding(5).opacity(0.5)
                     Text(card.content)
                         .font(font(in: geometry.size))
                 } else if (card.isMatched) {
@@ -60,9 +61,9 @@ struct CardView: View {
     }
     
     private struct DrawingContents {
-        static let cornerRadius: CGFloat = 16
-        static let lineWidth: CGFloat = 4
-        static let fontScale: CGFloat = 0.8
+        static let cornerRadius: CGFloat = 10
+        static let lineWidth: CGFloat = 3
+        static let fontScale: CGFloat = 0.7
         
     }
 }
@@ -70,6 +71,7 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiMemoryGame();
-        EmojiMemoryGameView(game: game).previewInterfaceOrientation(.portrait)
+        game.choose(game.cards.first!)
+        return EmojiMemoryGameView(game: game)
     }
 }
