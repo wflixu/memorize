@@ -22,6 +22,7 @@
 		5CA0E2A827A9741A000AF5E3 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		5CA0E2AA27AA2BE8000AF5E3 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		5CA0E2AC27AAB127000AF5E3 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		5CA0E2AE27ABD871000AF5E3 /* snip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = snip.h; sourceTree = "<group>"; };
 		5CBCF28D279ED171008358A4 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		5CBCF28F279ED4A4008358A4 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		5CF73F76279BB1A1005FC784 /* memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +71,7 @@
 				5CF73F7D279BB1A2005FC784 /* Assets.xcassets */,
 				5CF73F7F279BB1A2005FC784 /* Preview Content */,
 				5CA0E2AC27AAB127000AF5E3 /* Cardify.swift */,
+				5CA0E2AE27ABD871000AF5E3 /* snip.h */,
 			);
 			path = memorize;
 			sourceTree = "<group>";
